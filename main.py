@@ -32,12 +32,11 @@ def main():
     ])
     test_set = datasets.ImageFolder(config.test_frames, transform = transform)
 
-
     # model selection
     if config.model == 'simpleCNN':
-        model = models.simpleCNN()
+        model = models.simpleCNN().to(config.device)
     elif config.model == 'ResNet':
-        model = models.ResNet()
+        model = models.ResNet().to(config.device)
 
     # train/val/test
     if config.train:
@@ -52,16 +51,24 @@ if __name__ == '__main__':
     main()
 
 
+"""
+Things to get done:
+1. Normalize features before entering into model
+1. ResNet model (transfer learning)
+2. LSTM connected
+
+Potential model ideas:
+1. feature matching - get (x,y) cooridnates
+2. select 100 most prominent macthes
+3. find the difference in pixel values
+4. encode with the speed -> feed into FCN
+"""
+
 
 """
 RESULTS:
-simpleCNN - train = 5.77, val = 3.06
-"""
-
-
-"""
-Things to get done:
-1. ResNet model (transfer learning)
-2. Tensorboard
-3. Complete Readme file
+1. simpleCNN - train = 5.77, val = 3.06 -> extreme overfitting
+2. ResNet (transfer) -
+3. LSTM embedding -
+4. Potential Model -
 """

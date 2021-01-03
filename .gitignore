@@ -10,6 +10,7 @@
 # folders
 data/
 video/
+runs/
 
 # Distribution / packaging
 .Python

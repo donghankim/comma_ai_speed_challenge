@@ -4,6 +4,7 @@ def get_args():
     argp = argparse.ArgumentParser(description='speed challenge',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
+
     # GENERAL
     argp.add_argument('--device', type=str, default='cpu')
     argp.add_argument('--train', action = 'store_true')
